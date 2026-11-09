@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily Big Idea 009: Simpson's paradox, the statistical reversal that warns us to ask what is hiding inside an average.">
+<meta name="theme-color" content="#f1e8d7">
+<title>Edition 009 — The Average Is Lying (A Little) | Daily Big Idea</title>
+<style>
+:root{
+  --paper:#f1e8d7;--ink:#202b36;--red:#c74732;--blue:#285c78;
+  --gold:#d5a83d;--pale:#e3d6c1;--muted:#687078;--white:#fffaf0;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}
+a{color:#9d3326;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:#5c211b}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{width:min(900px,calc(100% - 42px));margin:auto}
+.topbar{display:flex;justify-content:space-between;gap:14px;padding:21px 0;border-bottom:1px solid rgba(32,43,54,.25);font:700 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.topbar a{color:var(--ink);text-decoration:none}
+.issue{color:var(--muted);text-align:right}
+header{padding:clamp(52px,9vw,96px) 0 44px;position:relative}
+.eyebrow,.label{font:700 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.eyebrow:before{content:"";display:inline-block;width:27px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{max-width:820px;margin:21px 0 18px;font:400 clamp(3.1rem,9vw,6.7rem)/.91 var(--serif);letter-spacing:-.065em}
+.dek{max-width:660px;margin:0;color:#485766;font:400 clamp(1.2rem,2.7vw,1.55rem)/1.48 var(--serif)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.alert{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;padding:22px 24px;margin:14px 0 58px;background:var(--ink);color:var(--white);border-bottom:5px solid var(--red)}
+.alert strong{display:block;margin-bottom:7px;color:#f0c96b;font:700 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.alert p{margin:0;font:400 1.18rem/1.42 var(--serif)}
+.alert .side{font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-align:right;color:#d7c9b5}
+main{padding-bottom:68px}
+.label{margin:48px 0 10px;color:var(--blue)}
+h2{margin:0 0 17px;font:400 clamp(2rem,5vw,3.05rem)/1.05 var(--serif);letter-spacing:-.045em}
+h3{margin:24px 0 8px;font-size:1.04rem;line-height:1.35}
+p{margin:0 0 17px}
+.lead:first-letter{float:left;padding:8px 9px 0 0;color:var(--red);font:400 4.4rem/.75 var(--serif)}
+.pull{margin:34px 0;padding:8px 0 8px 24px;border-left:3px solid var(--red);color:#7f3028;font:italic 1.55rem/1.4 var(--serif)}
+.tablebox{margin:30px 0 36px;padding:21px;background:var(--white);border:1px solid rgba(32,43,54,.22);box-shadow:7px 7px 0 var(--pale)}
+.table-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px;font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:10px 9px;border-bottom:1px solid #d9d0c1;text-align:right}
+th:first-child,td:first-child{text-align:left}
+thead th{font:700 10px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
+tbody th{font-weight:650}
+td.good{color:#176247;font-weight:750}
+td.bad{color:#a53528;font-weight:750}
+tfoot td,tfoot th{border-top:2px solid var(--ink);border-bottom:0;font-weight:800}
+.caption{margin:12px 0 0;color:var(--muted);font-size:.78rem;line-height:1.5}
+.reversal{display:grid;grid-template-columns:1fr 42px 1fr;align-items:center;gap:10px;margin:27px 0 40px}
+.rbox{padding:17px 15px;background:#e4d8c5;border-top:3px solid var(--blue)}
+.rbox.total{background:#f2d5c9;border-color:var(--red)}
+.rbox strong{display:block;margin-bottom:7px;font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.rbox span{display:block;font:400 1.9rem/1.1 var(--serif)}
+.rbox small{display:block;margin-top:7px;color:var(--muted);font-size:.78rem}
+.rarrow{text-align:center;color:var(--red);font:700 25px var(--mono)}
+.formula{margin:25px 0;padding:17px 20px;background:#e5dccb;border-left:4px solid var(--gold);font:600 1rem/1.6 var(--mono);overflow-wrap:anywhere}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mini{padding-top:12px;border-top:1px solid rgba(32,43,54,.25)}
+.mini h3{margin-top:0;color:var(--blue)}
+.note{margin:27px 0;padding:21px 23px;background:#e3d6c1;border-left:4px solid var(--gold)}
+.note strong{color:#8a5f0d}
+.questions{counter-reset:q;list-style:none;padding:0;margin:22px 0 38px}
+.questions li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid rgba(32,43,54,.22)}
+.questions li:before{content:"0" counter(q);color:var(--red);font:700 12px var(--mono);padding-top:4px}
+.sources{margin-top:45px;padding:25px;background:var(--ink);color:var(--white)}
+.sources .label{margin:0 0 9px;color:#f0c96b}
+.sources h2{font-size:2rem}
+.sources p{color:#d7d2c9;font-size:.9rem}
+.sources ol{padding-left:20px;margin:0}
+.sources li{padding:7px 0;font-size:.87rem}
+.sources a{color:#f0c96b}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:22px 0 35px;border-top:1px solid rgba(32,43,54,.25);color:var(--muted);font:700 9px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:650px){
+ body{font-size:15px}.wrap{width:calc(100% - 30px)}
+ .alert{grid-template-columns:1fr}.alert .side{text-align:left}
+ .reversal{grid-template-columns:1fr}.rarrow{transform:rotate(90deg)}
+ .twocol{grid-template-columns:1fr}.tablebox{padding:12px;overflow-x:auto}
+ th,td{padding:8px 6px;font-size:.84rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+ body{background:white;color:#111;font-size:11pt}.wrap{width:100%}
+ .tablebox,.note,.rbox,.formula{break-inside:avoid}
+ .sources{background:#eee;color:#111;break-inside:avoid}
+ .sources p{color:#333}.sources a,a{color:#111}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="topbar" aria-label="Edition navigation">
+  <a href="../index.html">← Daily Big Idea / Archive</a>
+  <span class="issue">No. 009 / 08 Nov 2026</span>
+</nav>
+
+<header>
+  <div class="eyebrow">Statistics · Decision-making · Causal inference</div>
+  <h1>The Average<br>Is Lying.<br><span style="color:var(--red)">A Little.</span></h1>
+  <p class="dek">How a treatment can win in every group and still lose in the overall numbers. The answer is hiding in the weights.</p>
+  <div class="meta"><span>Edition 009</span><span>8 November 2026</span><span>Reading time · 8 minutes</span></div>
+</header>
+
+<aside class="alert" aria-label="Core idea">
+  <div><strong>The idea in one sentence</strong><p>Simpson’s paradox occurs when a trend seen within separate groups disappears or reverses after those groups are combined, because the groups contribute different weights to the overall average.</p></div>
+  <div class="side">CHECK THE<br>SUBGROUPS.<br>THEN CHECK<br>THE CAUSAL STORY.</div>
+</aside>
+
+<main>
+<div class="label">01 / The opening puzzle</div>
+<h2>Two treatments. One very rude spreadsheet.</h2>
+<p class="lead">A hospital compares two treatments for the same condition. Treatment A has a higher success rate than Treatment B among patients with mild cases. It also has a higher success rate among patients with severe cases. The result seems straightforward: A wins twice.</p>
+<p>Then the hospital combines everyone. Suddenly, Treatment B has the higher success rate overall. The spreadsheet appears to have changed its mind. It has not. The groups were mixed in different proportions: one treatment was given mostly to easier cases, the other mostly to harder ones. The overall percentages are weighted averages, and the weights are doing a lot of work.</p>
+<p>This is <strong>Simpson’s paradox</strong>, a statistical reversal in which a relationship visible in separate subgroups changes, vanishes or flips when the data are aggregated. It is not a mathematical contradiction. Every percentage can be correct at the same time. The trap is assuming that an overall average must tell the same story as the groups that make it up.</p>
+
+<div class="pull">Averages do not merely summarise the data. They also inherit the composition of the groups being averaged.</div>
+
+<div class="label">02 / Watch the reversal happen</div>
+<h2>The arithmetic is the plot.</h2>
+<p>Consider this deliberately simple, fictional hospital example. The figures are invented to make the mechanism visible; they are not clinical evidence about any real treatment.</p>
+
+<div class="tablebox">
+  <div class="table-head"><span>Illustrative data / success rates</span><span>Higher is better</span></div>
+  <table aria-label="Fictional treatment success rates by case severity and overall">
+    <thead><tr><th>Patient group</th><th>Treatment A</th><th>Treatment B</th></tr></thead>
+    <tbody>
+      <tr><th>Mild cases</th><td class="good">9 / 10 · 90%</td><td>80 / 100 · 80%</td></tr>
+      <tr><th>Severe cases</th><td class="good">30 / 100 · 30%</td><td>1 / 10 · 10%</td></tr>
+    </tbody>
+    <tfoot><tr><th>Everyone combined</th><td class="bad">39 / 110 · 35.5%</td><td class="good">81 / 110 · 73.6%</td></tr></tfoot>
+  </table>
+  <p class="caption">Within both severity groups, A has the higher success rate. In the combined population, B appears dramatically better.</p>
+</div>
+
+<div class="reversal" aria-label="Treatment A wins in each subgroup but loses in the overall comparison">
+  <div class="rbox"><strong>Inside each group</strong><span>A beats B</span><small>Mild: 90% vs 80%<br>Severe: 30% vs 10%</small></div>
+  <div class="rarrow" aria-hidden="true">≠</div>
+  <div class="rbox total"><strong>Across everyone</strong><span>B beats A</span><small>Overall: 73.6% vs 35.5%</small></div>
+</div>
+
+<p>Why? Look at who received each treatment. A was used on 100 severe patients and only 10 mild patients. B was used on 10 severe patients and 100 mild patients. Since mild cases are much more likely to succeed whatever the treatment, B gets a huge boost from having mostly mild cases. A carries the heavier burden of severe cases.</p>
+<p>The aggregate rate is not the simple average of the two subgroup percentages. It is a <em>weighted</em> average, with each subgroup weighted by how many people in that treatment group belong to it.</p>
+<div class="formula">Overall success rate =<br>(successes in all groups) ÷ (all patients in those groups)</div>
+<p>That is the whole trick. The two treatment groups have different compositions, so their weighted averages are not comparing like with like.</p>
+
+<div class="label">03 / A little history</div>
+<h2>The paradox is older than its name.</h2>
+<p>The phenomenon was discussed before Edward H. Simpson gave it its famous 1951 treatment. The Stanford Encyclopedia of Philosophy traces earlier work to statistician <strong>Karl Pearson</strong> in 1899 and <strong>George Udny Yule</strong> in 1903. Simpson’s paper, “The Interpretation of Interaction in Contingency Tables,” helped make the reversal widely known under his name.</p>
+<p>Simpson was concerned with how relationships in contingency tables should be interpreted. A table that looks simple when pooled can conceal a different pattern across categories. The modern lesson reaches beyond tables: statistical relationships depend on what has been grouped together, what has been separated, and what the groups represent.</p>
+<p>One famous application came in 1975, when <strong>Peter Bickel, Eugene Hammel and J. William O’Connell</strong> examined graduate admissions at the University of California, Berkeley. The university-wide figures for fall 1973 showed an admission rate of about 44% for men and 35% for women. But department-level analysis gave a more complicated picture: women tended to apply to departments with lower admission rates, and the pattern within departments did not match the aggregate headline.</p>
+<p>The authors argued that the pooled data, once departmental decision-making and application patterns were considered, showed a small statistically significant bias in favour of women. This did not prove that discrimination was absent throughout the university or in the wider education system. It showed why a university-wide percentage alone could not identify where or how bias operated.</p>
+
+<div class="label">04 / The deeper lesson</div>
+<h2>Which question are you actually asking?</h2>
+<p>Simpson’s paradox is often introduced as a warning about confounding, but two separate questions need to be kept apart.</p>
+<div class="twocol">
+  <div class="mini"><h3>Question A / What happened?</h3><p>This is descriptive. What were the observed success rates in the full population and in each subgroup? The answer depends on the data and the chosen level of aggregation.</p></div>
+  <div class="mini"><h3>Question B / What caused it?</h3><p>This is causal. Would the same patients have had different outcomes if they had received the other treatment? Observed percentages alone may not answer that counterfactual question.</p></div>
+</div>
+<p>A third variable, such as disease severity, can be associated with both treatment assignment and outcome. In that case, it can confound the comparison. But not every Simpson reversal has the same causal structure. Sometimes the subgroup variable is a genuine pre-existing confounder. Sometimes it is a mediator, a selection variable, or a variable that should not be adjusted for. Conditioning on the wrong variable can create a new bias rather than remove one.</p>
+<p>That is why “always split the data” is not a safe statistical rule. The right analysis depends on how the data were generated and on the question being asked. A causal diagram, a study design and subject-matter knowledge can matter more than the visual drama of the reversal.</p>
+
+<div class="label">05 / Where it matters</div>
+<h2>From hospital wards to business dashboards.</h2>
+<div class="twocol">
+  <div class="mini"><h3>Medicine and public health</h3><p>Hospitals treat populations with different ages, risk profiles and disease severity. A crude comparison of death or recovery rates can reverse after stratifying by a relevant risk factor. Standardised rates and well-designed trials help make comparisons more meaningful.</p></div>
+  <div class="mini"><h3>Hiring and education</h3><p>Overall acceptance or promotion rates may conceal differences in job family, seniority, location or applicant pool. Disaggregation can reveal where a disparity occurs, but it does not by itself establish the cause or settle whether the selection process is fair.</p></div>
+  <div class="mini"><h3>Investing and performance</h3><p>A fund manager may outperform in every market regime but underperform overall if most of the manager’s exposure occurred during a difficult regime. Conversely, an apparently strong aggregate record may come from favourable exposure rather than superior decisions.</p></div>
+  <div class="mini"><h3>Technology and product analytics</h3><p>A new app feature may improve conversion among both new and returning users, yet the overall conversion rate may fall if the mix of visitors shifts heavily toward a lower-converting segment. Segment mix and within-segment performance are different things.</p></div>
+</div>
+
+<div class="label">06 / What the paradox does not say</div>
+<h2>Do not turn a warning into a new superstition.</h2>
+<p><strong>It does not mean aggregate data are useless.</strong> The overall rate may be exactly the quantity a policymaker or business needs. If the question is “What proportion of all patients recovered?”, the pooled rate answers it. The problem begins when that number is used to answer a different question, such as “Which treatment works better for comparable patients?”</p>
+<p><strong>It does not mean subgroup data are automatically superior.</strong> Small subgroups can be noisy. Splitting data repeatedly can produce unstable percentages, false discoveries and a forest of tiny comparisons. Groups should be chosen for a defensible reason, ideally before examining the results.</p>
+<p><strong>It does not prove that the subgroup comparison is causal.</strong> The mild and severe groups in our fictional example may still differ in age, other illnesses or access to care. More adjustment is not always better adjustment. A sound causal analysis requires assumptions about which variables precede treatment, which affect the outcome and how selection happened.</p>
+<p>Finally, this is a statistical phenomenon, not a universal law that every average hides a reversal. The reversal is possible under particular combinations of subgroup rates and weights. Often, the aggregate and subgroup patterns point in the same direction. The skill is knowing when the composition of the sample could change the conclusion.</p>
+
+<div class="note"><strong>A practical rule:</strong> Whenever two groups are compared, ask three things: What is the overall rate? What are the relevant subgroup rates? And how much of each subgroup is represented in each group? Then ask what causal story would justify the comparison.</div>
+
+<div class="label">07 / Try it yourself</div>
+<h2>Three questions before trusting the chart.</h2>
+<ol class="questions">
+  <li><div><strong>What is the hidden mix?</strong><br>Pick a headline comparison: school rankings, hospital outcomes, sales conversion or investment returns. Which background variable could make the groups unlike each other?</div></li>
+  <li><div><strong>Can you reverse the result with weights?</strong><br>Invent two subgroups where A beats B in both. Give B more observations in the easier subgroup and A more in the harder one. Calculate the pooled rates. Notice how the weights, not arithmetic errors, create the reversal.</div></li>
+  <li><div><strong>Which number answers the real question?</strong><br>If you were allocating a budget, choosing a treatment or evaluating a manager, would you care about the overall outcome, the within-group effect, or both? State the decision first. Then decide which statistic is relevant.</div></li>
+</ol>
+
+<section class="sources" aria-labelledby="sources-title">
+  <div class="label">Further reading / source notes</div>
+  <h2 id="sources-title">Follow the trail.</h2>
+  <p>The first two sources are foundational. The later reviews are useful for the distinction between a statistical reversal and a causal conclusion.</p>
+  <ol>
+    <li>E. H. Simpson (1951), “<a href="https://doi.org/10.1111/j.2517-6161.1951.tb00088.x">The Interpretation of Interaction in Contingency Tables</a>,” <em>Journal of the Royal Statistical Society: Series B</em>, 13(2), 238–241.</li>
+    <li>P. J. Bickel, E. A. Hammel and J. W. O’Connell (1975), “<a href="https://doi.org/10.1126/science.187.4175.398">Sex Bias in Graduate Admissions: Data from Berkeley</a>,” <em>Science</em>, 187(4175), 398–404.</li>
+    <li>“<a href="https://plato.stanford.edu/entries/paradox-simpson/">Simpson’s Paradox</a>,” <em>Stanford Encyclopedia of Philosophy</em> (first published 2021; substantive revision 2026). A detailed treatment of the mathematics, causal inference and applications.</li>
+    <li>Steven A. Julious and Mark A. Mullee (1994), “<a href="https://doi.org/10.1136/bmj.309.6967.1480">Confounding and Simpson’s Paradox</a>,” <em>BMJ</em>, 309, 1480. Includes a medical example involving kidney-stone treatment outcomes.</li>
+    <li>Judea Pearl (2009), <a href="https://www.cambridge.org/core/books/causality/"><em>Causality: Models, Reasoning, and Inference</em></a>, 2nd edition, Cambridge University Press. A major reference for causal diagrams and why adjustment requires a causal model.</li>
+  </ol>
+</section>
+</main>
+<footer><span>Daily Big Idea · Edition 009</span><span>One idea. Several ways to see the world.</span></footer>
+</div>
+</body>
+</html>
