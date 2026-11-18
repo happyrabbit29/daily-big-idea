@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily Big Idea, Edition 020: the Innovator's Dilemma, and why successful companies can miss the next market while doing everything right for today's customers.">
+<meta name="theme-color" content="#f1eadb">
+<title>Edition 020 - The Innovator's Dilemma | Daily Big Idea</title>
+<style>
+:root{--paper:#f1eadb;--sheet:#faf7ef;--ink:#202c3a;--muted:#626b70;--red:#c44d35;--blue:#315e83;--gold:#d49a37;--rule:rgba(32,44,58,.2);--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;--mono:Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}a{color:#a23a28;text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 42px));margin:auto}
+.topbar{display:flex;justify-content:space-between;gap:15px;padding:21px 0;border-bottom:1px solid var(--rule);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.topbar a{color:var(--ink);text-decoration:none}.issue{color:var(--muted)}
+header{padding:clamp(54px,9vw,98px) 0 44px}.header-grid{display:grid;grid-template-columns:1fr 130px;gap:25px;align-items:end}.kicker,.label{font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}.kicker:before{content:"";display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{margin:21px 0 18px;font:400 clamp(3.1rem,8.5vw,6.3rem)/.91 var(--serif);letter-spacing:-.065em}.dek{max-width:650px;margin:0;color:#465565;font:400 clamp(1.2rem,2.6vw,1.55rem)/1.48 var(--serif)}.header-stamp{width:118px;height:118px;border:1px solid var(--red);border-radius:50%;display:grid;place-items:center;transform:rotate(9deg);color:var(--red);font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-align:center}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.thesis{margin:10px 0 58px;padding:22px 24px;background:var(--ink);color:var(--sheet);border-left:6px solid var(--red);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}.thesis strong{display:block;color:#f0bd70;font:700 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.thesis p{margin:0;font:400 1.2rem/1.4 var(--serif)}.thesis .stamp{color:#bfc9ce;font:700 9px var(--mono);letter-spacing:.12em;text-align:right}
+main{padding-bottom:68px}.label{margin:47px 0 10px;color:var(--blue)}h2{margin:0 0 17px;font:400 clamp(2rem,5vw,3rem)/1.06 var(--serif);letter-spacing:-.045em}h3{margin:24px 0 7px;font-size:1.04rem}p{margin:0 0 17px}.lead:first-letter{float:left;padding:8px 9px 0 0;color:var(--red);font:400 4.2rem/.76 var(--serif)}.pull{margin:34px 0;padding:9px 0 9px 24px;border-left:2px solid var(--gold);color:#31516a;font:italic 1.55rem/1.4 var(--serif)}
+.diagram{margin:34px 0 40px;padding:22px;background:var(--sheet);border:1px solid var(--rule)}.diagram-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stage{padding:15px 12px;background:#f4efe3;border:1px solid var(--rule)}.stage b{display:block;color:var(--red);font:700 10px var(--mono);margin-bottom:8px}.stage strong{display:block;font:400 1.15rem/1.2 var(--serif);margin-bottom:8px}.stage span{display:block;color:#4f5b64;font-size:.8rem;line-height:1.5}.diagram-note{margin:15px 0 0;color:var(--muted);font-size:.78rem}
+.example{margin:26px 0;padding:23px 25px;background:#e5e9e7;border-top:3px solid var(--blue)}.tag{color:var(--blue);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.formula{margin:15px 0;padding:13px 15px;background:#fbfaf5;border:1px solid #c7d0cc;font:700 clamp(.95rem,2.6vw,1.2rem) var(--mono)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:23px}.mini{padding-top:12px;border-top:1px solid var(--rule)}.mini h3{margin-top:0;color:var(--blue)}.questions{counter-reset:q;list-style:none;padding:0;margin:20px 0 38px}.questions li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--rule)}.questions li:before{content:"0" counter(q);color:var(--red);font:700 12px var(--mono);padding-top:4px}
+.sources{margin-top:45px;padding:25px;background:var(--ink);color:var(--sheet)}.sources h2{font-size:2rem}.sources p{color:#cbd1d1;font-size:.9rem}.sources ol{padding-left:20px;margin:0}.sources li{padding:7px 0;font-size:.87rem}.sources a{color:#f0bd70}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 34px;border-top:1px solid var(--rule);color:var(--muted);font:700 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:650px){body{font-size:15px}.wrap{width:calc(100% - 30px)}.header-grid{grid-template-columns:1fr}.header-stamp{width:75px;height:75px;font-size:8px}.thesis{grid-template-columns:1fr}.thesis .stamp{text-align:left}.timeline,.two-col{grid-template-columns:1fr}.diagram{padding:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white;color:#111;font-size:11pt}.wrap{width:100%}.diagram,.example,.sources{break-inside:avoid}.sources{background:#eee;color:#111}.sources p{color:#333}}
+</style>
+</head>
+<body><div class="wrap">
+<nav class="topbar"><a href="../index.html">← Daily Big Idea / Archive</a><span class="issue">No. 020 / 18 Nov 2026</span></nav>
+<header><div class="header-grid"><div><div class="kicker">Business · Strategy · Innovation</div><h1>The<br>Innovator’s<br>Dilemma.</h1><p class="dek">Why successful companies can serve today’s best customers perfectly and still miss the simpler business taking shape just beyond their field of vision.</p></div><div class="header-stamp">FIELD<br>NOTES<br>NO. 020</div></div><div class="meta"><span>Edition 020</span><span>18 November 2026</span><span>Reading time · 7 minutes</span></div></header>
+<aside class="thesis"><div><strong>The idea in one sentence</strong><p>The Innovator’s Dilemma is the trap in which sensible decisions to serve the most profitable customers and protect an existing business model leave a company exposed to simpler offers that begin in overlooked corners of the market.</p></div><div class="stamp">SERVE THE CORE<br>MISS THE EDGE<br>LOSE THE FUTURE</div></aside>
+<main>
+<div class="label">01 / The opening scene</div><h2>The steel product nobody wanted.</h2>
+<p class="lead">Imagine running a large integrated steelmaker. Your biggest customers are automakers and appliance manufacturers. They demand consistent, high-grade sheet steel. Your plants, engineers and sales teams are built around meeting those demanding specifications. Then a smaller rival arrives with a cheaper process and starts making rebar from scrap metal.</p>
+<p>Rebar is useful, but it sits near the low end of the market. It earns thinner margins and does not require the same capabilities as premium sheet steel. The newcomer’s product is not good enough to tempt your most profitable customers. Your managers look at the numbers and decide not to spend scarce capital fighting for a segment that barely moves the needle.</p>
+<p>That decision is not obviously foolish. It is what a disciplined company, accountable to customers and investors, might reasonably do.</p>
+<p>But the smaller mills keep learning. Their electric-arc-furnace process improves. They move from rebar into more demanding structural steel and eventually higher grades, including sheet steel. What began as an uninteresting corner of the market becomes a route towards the incumbent’s core business.</p>
+<p>This is the steel-industry story at the heart of Clayton Christensen’s work on disruptive innovation. The danger was not simply that the large companies failed to invent something clever. It was that their existing strengths and incentives made the early market easy to ignore.</p>
+<div class="pull">Sometimes a company does not lose because it stops listening to customers. It loses because it listens so well to the customers it already has.</div>
+
+<div class="label">02 / The mechanism</div><h2>Good management can create a blind spot.</h2>
+<p>Most established businesses are designed to improve what they already sell. They ask customers what they want next, invest in features that command a premium, and direct resources towards opportunities with visible demand and attractive returns. This is often exactly right.</p>
+<p>Christensen called these improvements <strong>sustaining innovations</strong>: changes that make an existing product better for the customers already being served. A more powerful engine, a sharper camera or faster enterprise software can be valuable without changing who the market is for.</p>
+<p>A disruptive innovation follows a different path. It usually begins in one of two places:</p>
+<div class="two-col">
+<div class="mini"><h3>Low-end foothold</h3><p>Some customers are overserved. They receive more performance than they need and would accept a simpler, cheaper option. The entrant starts with the least profitable segment that incumbents are happy to leave behind.</p></div>
+<div class="mini"><h3>New-market foothold</h3><p>Some people are not customers at all. Existing products are too expensive, complicated or inaccessible. The entrant makes participation possible for people who previously went without.</p></div>
+</div>
+<p>The first product may be inferior on the dimensions the incumbent is trying to maximise. It may have fewer features, lower performance or a narrower range. But it offers a different combination: affordability, convenience, simplicity or access.</p>
+<div class="diagram"><div class="diagram-head"><span>How the dilemma unfolds</span><span>Conceptual sequence</span></div><div class="timeline">
+<div class="stage"><b>01 / THE CORE</b><strong>Follow the best customers</strong><span>Improve the current offer and fund the most profitable, visible opportunities.</span></div>
+<div class="stage"><b>02 / THE EDGE</b><strong>Ignore the small foothold</strong><span>A simpler entrant serves overlooked customers or people who were not buying at all.</span></div>
+<div class="stage"><b>03 / THE CLIMB</b><strong>Improve the economics</strong><span>The entrant learns, improves performance and moves towards more demanding customers.</span></div>
+<div class="stage"><b>04 / THE COLLISION</b><strong>Reach the mainstream</strong><span>The entrant becomes good enough for a much larger market, often with a cost structure the incumbent struggles to match.</span></div>
+</div><p class="diagram-note">This is a possible trajectory, not an automatic law. Many entrants never improve enough to move upmarket, and many incumbents respond successfully.</p></div>
+<p>The incumbent faces a resource-allocation problem. Its best customers may not want the new product. The early market may be too small to justify investment. The new model may threaten existing revenue, channels or margins. So the company keeps improving the business that currently pays its bills.</p>
+<p>Every individual decision can make sense. The combined pattern can leave the organisation unprepared for a different market.</p>
+
+<div class="label">03 / The business version</div><h2>Why the entrant can look worse before it looks dangerous.</h2>
+<p>Think of an established software company selling a powerful enterprise system. Its largest customers ask for deeper customisation, more controls and more features. The company spends its best engineering resources on those requests because large contracts fund the business.</p>
+<p>A newcomer offers a basic cloud tool to small teams that cannot afford the enterprise system and do not need all its complexity. At first, the tool is clearly less capable. The incumbent’s sales team sees tiny customers, low contract values and a product that would not satisfy its biggest accounts.</p>
+<p>But the entrant has a different cost structure. It can serve many small customers with standardised software, frequent updates and little implementation work. As the product improves, some customers grow with it. Larger businesses begin to consider it too. The original foothold has become a learning ground and a distribution base.</p>
+<p>The point is not that the newcomer must win. It is that <strong>the incumbent’s normal scorecard may be measuring the wrong early signals</strong>. Revenue per customer, feature depth and current margin can make the foothold look unattractive while hiding its improvement rate and future reach.</p>
+<div class="example"><div class="tag">The strategy distinction</div><div class="formula">Better for today’s customer ≠ safer for tomorrow’s market</div><p style="margin:0">Sustaining innovation protects and strengthens an existing basis of competition. Disruption changes the path into the market: who gets served first, what they value, and how the entrant can afford to serve them.</p></div>
+
+<div class="label">04 / The investor’s lens</div><h2>Look for the market the incumbent has no reason to love.</h2>
+<p>For an investor, the theory is useful because it changes where you look for competitive threats. Do not only compare the entrant’s current product with the incumbent’s current product. Compare the economics and the path each business can travel.</p>
+<p>A few questions help:</p>
+<ol class="questions">
+<li><div><strong>Who is not being served well?</strong><br>Find customers who are overserved, priced out, or forced to use a complicated workaround. Their needs may reveal a foothold.</div></li>
+<li><div><strong>Why is the incumbent leaving them alone?</strong><br>Look at margin structure, fixed costs, distribution, sales incentives and the demands of its largest customers. The neglect should have an economic explanation.</div></li>
+<li><div><strong>Does the entrant have a different cost model?</strong><br>A cheaper product is not enough if it is built on the same expensive economics. Ask whether technology, channels or processes let the entrant serve the segment sustainably.</div></li>
+<li><div><strong>Can it improve into the mainstream?</strong><br>Track product quality, reliability, customer retention and the direction of capability. A foothold without a credible improvement path may remain a niche.</div></li>
+</ol>
+<p>For the incumbent, the question is different: can it experiment with a new model without forcing it to meet the old business’s margin targets, sales process and customer expectations from day one? Sometimes a separate team or business unit can protect the experiment from the organisation’s existing logic.</p>
+
+<div class="label">05 / The caveat</div><h2>“Disruption” is not a synonym for “new and successful.”</h2>
+<p>The word has been stretched until it describes almost any startup, technology launch or industry shake-up. That makes it sound exciting, but not very useful.</p>
+<div class="two-col">
+<div class="mini"><h3>Not every breakthrough is disruptive</h3><p>A superior product that competes directly for an incumbent’s best customers may be a powerful innovation, but it does not follow the low-end or new-market path in Christensen’s specific theory.</p></div>
+<div class="mini"><h3>Not every entrant climbs</h3><p>Many cheap alternatives stay small, fail to improve or discover that customers will not pay enough to support them. A foothold is an opportunity, not a prophecy.</p></div>
+<div class="mini"><h3>Incumbents can adapt</h3><p>Established companies can build separate ventures, acquire capabilities, change their cost structures or serve the new market themselves. Being large does not make failure inevitable.</p></div>
+<div class="mini"><h3>Other forces matter</h3><p>Legacy costs, regulation, capital intensity, management execution, changing scale economies and plain bad luck can explain a company’s decline. One framework cannot explain every corporate funeral.</p></div>
+</div>
+<p>There is also a serious academic debate about the theory’s predictive power. In a 2015 review of 77 cases cited in Christensen’s books, Andrew King and Baljir Baatartogtokh found that only a small minority clearly matched all the theory’s premises and predicted outcomes under their assessment. Their conclusion was not that the idea is worthless, but that it is best used as a warning about managerial blind spots, alongside other forms of strategic analysis.</p>
+<p>That distinction matters. The theory is a lens for asking better questions, not a machine that identifies the next industry winner.</p>
+<div class="pull">The useful signal is not that an entrant is small. It is that the entrant is learning in a market the incumbent is structurally motivated to overlook.</div>
+
+<div class="label">06 / The practical takeaway</div><h2>Study the edge before it becomes the centre.</h2>
+<p>When you assess a company or an industry, map the market from the bottom up as well as from the top down. Identify the customers incumbents find unattractive. Understand why the new model can serve them at a lower cost. Then test whether the entrant can improve enough to reach the mainstream.</p>
+<p>And when you assess the incumbent, do not mistake excellent execution of the current strategy for proof that the strategy will remain relevant. A business can be well managed, loved by customers and financially healthy, while a different market is quietly taking shape.</p>
+<p>The Innovator’s Dilemma is not a command to chase every new technology. It is a reminder to keep looking where today's economics tell you not to look.</p>
+
+<section class="sources"><h2>Further reading</h2><p>These sources explain the original framework, the steel-industry example and the debate about how broadly the theory should be applied.</p><ol>
+<li>Clayton M. Christensen Institute, “Disruptive Innovation Theory.” A clear overview of low-end and new-market footholds, sustaining innovation, and the steel mini-mill case. <a href="https://www.christenseninstitute.org/theory/disruptive-innovation/" target="_blank" rel="noopener">Read the theory overview</a>.</li>
+<li>Andrew A. King and Baljir Baatartogtokh (2015), “How Useful Is the Theory of Disruptive Innovation?”, <em>MIT Sloan Management Review</em>. An empirical challenge to applying the theory too broadly. <a href="https://www.oreilly.com/library/view/how-useful-is/53863MIT57114/chapter001.html" target="_blank" rel="noopener">Read the article preview</a>.</li>
+<li>Harvard Business School Online, “4 Keys to Understanding Clayton Christensen’s Theory of Disruptive Innovation.” A useful explanation of low-end and new-market disruption, and why the term is often misused. <a href="https://online.hbs.edu/blog/post/4-keys-to-understanding-clayton-christensens-theory-of-disruptive-innovation" target="_blank" rel="noopener">Read the explainer</a>.</li>
+</ol></section>
+</main>
+<footer><span>Daily Big Idea · Edition 020</span><span>Read carefully. Think differently.</span></footer>
+</div></body></html>
