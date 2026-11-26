@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily Big Idea, Edition 028: the outside view and reference class forecasting, a way to replace confident project stories with evidence from comparable outcomes.">
+<meta name="theme-color" content="#f1eadb">
+<title>Edition 028 - The Outside View | Daily Big Idea</title>
+<style>
+:root{--paper:#f1eadb;--sheet:#faf7ef;--ink:#202c3a;--muted:#626b70;--red:#c44d35;--blue:#315e83;--gold:#d49a37;--rule:rgba(32,44,58,.2);--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;--mono:Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}a{color:#a23a28;text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 42px));margin:auto}
+.topbar{display:flex;justify-content:space-between;gap:15px;padding:21px 0;border-bottom:1px solid var(--rule);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.topbar a{color:var(--ink);text-decoration:none}.issue{color:var(--muted)}
+header{padding:clamp(54px,9vw,98px) 0 44px}.header-grid{display:grid;grid-template-columns:1fr 130px;gap:25px;align-items:end}.kicker,.label{font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}.kicker:before{content:"";display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{margin:21px 0 18px;font:400 clamp(3.1rem,8.5vw,6.3rem)/.91 var(--serif);letter-spacing:-.065em}.dek{max-width:650px;margin:0;color:#465565;font:400 clamp(1.2rem,2.6vw,1.55rem)/1.48 var(--serif)}.header-stamp{width:118px;height:118px;border:1px solid var(--red);border-radius:50%;display:grid;place-items:center;transform:rotate(9deg);color:var(--red);font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-align:center}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.thesis{margin:10px 0 58px;padding:22px 24px;background:var(--ink);color:var(--sheet);border-left:6px solid var(--red);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}.thesis strong{display:block;color:#f0bd70;font:700 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.thesis p{margin:0;font:400 1.2rem/1.4 var(--serif)}.thesis .stamp{color:#bfc9ce;font:700 9px var(--mono);letter-spacing:.12em;text-align:right}
+main{padding-bottom:68px}.label{margin:47px 0 10px;color:var(--blue)}h2{margin:0 0 17px;font:400 clamp(2rem,5vw,3rem)/1.06 var(--serif);letter-spacing:-.045em}h3{margin:24px 0 7px;font-size:1.04rem}p{margin:0 0 17px}.lead:first-letter{float:left;padding:8px 9px 0 0;color:var(--red);font:400 4.2rem/.76 var(--serif)}.pull{margin:34px 0;padding:9px 0 9px 24px;border-left:2px solid var(--gold);color:#31516a;font:italic 1.55rem/1.4 var(--serif)}
+.diagram{margin:34px 0 40px;padding:22px;background:var(--sheet);border:1px solid var(--rule)}.diagram-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stage{padding:14px 11px;background:#f4efe3;border:1px solid var(--rule)}.stage b{display:block;color:var(--red);font:700 10px var(--mono);margin-bottom:8px}.stage strong{display:block;font:400 1.05rem/1.2 var(--serif);margin-bottom:8px}.stage span{display:block;color:#4f5b64;font-size:.77rem;line-height:1.5}.diagram-note{margin:15px 0 0;color:var(--muted);font-size:.78rem}
+.example{margin:26px 0;padding:23px 25px;background:#e5e9e7;border-top:3px solid var(--blue)}.tag{color:var(--blue);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.formula{margin:15px 0;padding:13px 15px;background:#fbfaf5;border:1px solid #c7d0cc;font:700 clamp(.95rem,2.6vw,1.2rem) var(--mono);overflow-wrap:anywhere}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:23px}.mini{padding-top:12px;border-top:1px solid var(--rule)}.mini h3{margin-top:0;color:var(--blue)}.questions{counter-reset:q;list-style:none;padding:0;margin:20px 0 38px}.questions li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--rule)}.questions li:before{content:"0" counter(q);color:var(--red);font:700 12px var(--mono);padding-top:4px}
+.sources{margin-top:45px;padding:25px;background:var(--ink);color:var(--sheet)}.sources h2{font-size:2rem}.sources p{color:#cbd1d1;font-size:.9rem}.sources ol{padding-left:20px;margin:0}.sources li{padding:7px 0;font-size:.87rem}.sources a{color:#f0bd70}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 34px;border-top:1px solid var(--rule);color:var(--muted);font:700 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:850px){.timeline{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){body{font-size:15px}.wrap{width:calc(100% - 30px)}.header-grid{grid-template-columns:1fr}.header-stamp{width:75px;height:75px;font-size:8px}.thesis{grid-template-columns:1fr}.thesis .stamp{text-align:left}.timeline,.two-col{grid-template-columns:1fr}.diagram{padding:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white;color:#111;font-size:11pt}.wrap{width:100%}.diagram,.example,.sources{break-inside:avoid}.sources{background:#eee;color:#111}.sources p{color:#333}}
+</style>
+</head>
+<body><div class="wrap">
+<nav class="topbar"><a href="../index.html">← Daily Big Idea / Archive</a><span class="issue">No. 028 / 26 Nov 2026</span></nav>
+<header><div class="header-grid"><div><div class="kicker">Investing · Strategy · Project appraisal</div><h1>The Outside<br>View.</h1><p class="dek">Why the most useful forecast may begin by looking away from the project in front of you, and asking how similar projects actually turned out.</p></div><div class="header-stamp">FIELD<br>NOTES<br>NO. 028</div></div><div class="meta"><span>Edition 028</span><span>26 November 2026</span><span>Reading time · 7 minutes</span></div></header>
+<aside class="thesis"><div><strong>The idea in one sentence</strong><p>When a forecast is built around a unique story, anchor it to the actual distribution of outcomes from comparable cases before trusting the details of the plan.</p></div><div class="stamp">THE PLAN IS<br>ONE STORY.<br>THE CLASS IS<br>THE EVIDENCE.</div></aside>
+<main>
+<div class="label">01 / The opening scene</div><h2>A beautiful building. A very difficult estimate.</h2>
+<p class="lead">In 1957, the design for the Sydney Opera House was selected. The project was meant to become a landmark for a young country. Its original estimate was about £3.5 million, and the target opening date was Australia Day in 1963. The drawings were striking. The ambition was enormous. The plan, on paper, looked like a building project.</p>
+<p>Then the site began to answer questions the drawings had not. The geology at Bennelong Point was not what had been assumed. The foundations needed substantial work that had not been budgeted. The eventual weight and anchoring requirements of the roof were still uncertain. Construction began before critical design questions had been settled, and the early momentum made it harder to stop and rethink the sequence.</p>
+<p>The Opera House opened on 20 October 1973. The final cost was about A$102 million; the New South Wales archival guide notes that its figure excludes the organ and car park. The result became one of the world's best-known buildings. It was also a warning about treating a project's own story as a forecast.</p>
+<div class="pull">A plan explains how success is supposed to happen. A reference class asks how often plans like this have actually succeeded.</div>
+<p>This is the difference between the <strong>inside view</strong> and the <strong>outside view</strong>. The inside view studies this project's design, team, suppliers, milestones and special advantages. The outside view steps back and looks at the recorded outcomes of a relevant group of similar projects.</p>
+
+<div class="label">02 / The mechanism</div><h2>Trade the confident story for a distribution.</h2>
+<p>People naturally build forecasts from the details in front of them. That can be useful. It can also make a new project feel more predictable than it is. Teams know the schedule they have drawn, the efficiencies they expect and the reasons their project is different. They may know much less about the full range of ways comparable projects have gone wrong.</p>
+<p>Reference class forecasting gives the outside view a practical form. Rather than trying to imagine every delay or cost shock, it uses the actual record of a suitable group of completed projects as the starting point for the forecast.</p>
+<div class="diagram"><div class="diagram-head"><span>Reference class forecasting</span><span>Three steps, then an adjustment</span></div><div class="timeline">
+<div class="stage"><b>01 / DEFINE</b><strong>Choose the class</strong><span>Find completed projects similar in type, scale, complexity and setting.</span></div>
+<div class="stage"><b>02 / MEASURE</b><strong>Build the distribution</strong><span>Collect actual cost, schedule or demand outcomes, not just original promises.</span></div>
+<div class="stage"><b>03 / LOCATE</b><strong>Place the new project</strong><span>Ask where this project belongs in the historical range of outcomes.</span></div>
+<div class="stage"><b>04 / ADJUST</b><strong>Demand evidence</strong><span>Move away from the class baseline only for specific, verifiable reasons.</span></div>
+</div><p class="diagram-note">The reference class should be broad enough to contain a meaningful sample, but narrow enough that its projects are genuinely comparable.</p></div>
+<p>The method is associated with the work of Daniel Kahneman and Amos Tversky on the outside view, and was developed into a practical project-forecasting method by Bent Flyvbjerg and other researchers. It is not a claim that every new project will match the average. It is a way to stop a persuasive project narrative from becoming the only evidence in the room.</p>
+
+<div class="label">03 / The evidence</div><h2>What happened to the projects before yours?</h2>
+<p>A landmark study by Bent Flyvbjerg, Mette Skamris Holm and Søren Buhl examined 258 transport infrastructure projects across 20 countries. In that historical sample, average construction-cost escalation differed materially by project type:</p>
+<div class="example"><div class="tag">Historical reference class / 258 projects</div><div class="two-col">
+<div class="mini"><h3>Rail projects</h3><p><strong>44.7%</strong> average cost escalation across 58 projects.</p></div>
+<div class="mini"><h3>Bridges and tunnels</h3><p><strong>33.8%</strong> average cost escalation across 33 projects.</p></div>
+<div class="mini"><h3>Road projects</h3><p><strong>20.4%</strong> average cost escalation across 167 projects.</p></div>
+<div class="mini"><h3>The warning</h3><p>The standard deviations were wide. The average describes a group, not the fate of every individual project.</p></div>
+</div><p class="diagram-note">Figures are from the study's constant-price estimates. They are historical sample averages, not universal uplifts for projects being assessed today.</p></div>
+<p>Notice what the numbers do not say. They do not say that every rail project will overrun by 44.7%, or that roads are safe because their average is lower. They say that the type of project matters, and that the spread around an average matters too. Combining rail, roads and tunnels into one generic “infrastructure” benchmark would hide information that should change the forecast.</p>
+<p>It is also why a distribution is more useful than a single number. A central estimate helps with the base case. A more adverse percentile can help size contingency and test financing resilience. The right percentile depends on the decision, the sponsor's risk tolerance and the consequences of running out of money.</p>
+
+<div class="label">04 / A worked example</div><h2>How a benchmark changes the investment case.</h2>
+<p>Imagine a utility proposing a new transmission project. Management presents a budget of $1 billion. The internal model assumes the line is energised on schedule, so the forecast cash flows begin when planned. The equity story depends on the project being delivered close to that budget.</p>
+<p>Now suppose the analyst builds a reference class of genuinely comparable completed projects. For this <em>illustrative example only</em>, assume the class has a median cost overrun of 25% and an 80th-percentile overrun of 50%.</p>
+<div class="example"><div class="tag">Illustrative arithmetic / not an industry benchmark</div><div class="formula">$1.0bn budget × 1.25 = $1.25bn median outcome</div><div class="formula">$1.0bn budget × 1.50 = $1.50bn 80th-percentile outcome</div><p>The analyst now has a different question. Is management's $1 billion estimate supported by a contract structure, route, permit status, contractor record and engineering maturity that genuinely place this project near the favourable end of the class? Or is the model quietly assuming that the project will be exceptional because the investment case needs it to be?</p></div>
+<p>If the project still earns attractive returns at a more realistic cost and a later commissioning date, the thesis may be robust. If a modest overrun destroys the return, the forecast is fragile even before the first excavator arrives.</p>
+
+<div class="label">05 / Why investors should care</div><h2>Capex forecasts are valuation assumptions in disguise.</h2>
+<p>For an investor, a project budget is not just a line in management's presentation. It influences future depreciation, financing needs, free cash flow, production capacity and the date at which expected revenue can begin. A delay can hurt twice: the company spends for longer while the cash flows arrive later.</p>
+<div class="two-col">
+<div class="mini"><h3>For capital-intensive companies</h3><p>Compare mines, refineries, pipelines, power plants, telecom roll-outs and transmission networks with completed projects of similar scale and complexity. Test both the capex number and the promised commissioning date.</p></div>
+<div class="mini"><h3>For management quality</h3><p>Track forecast accuracy across projects. A management team that repeatedly delivers below budget and on time may deserve a different assessment from one whose plans repeatedly migrate.</p></div>
+</div>
+<p>Reference classes can also improve revenue forecasts. A new plant's nameplate capacity is not the same as its first-year output. Compare actual ramp-up curves from similar facilities, customer adoption rates from comparable launches, or realised traffic against forecasts for similar transport assets.</p>
+<p>HM Treasury's optimism-bias guidance makes the same practical point for public appraisal: where robust project-specific evidence is missing, adjust estimates of cost, benefits and duration using data from past or similar projects, then account for the characteristics of the project being assessed.</p>
+
+<div class="label">06 / The limits</div><h2>The comparison can be wrong too.</h2>
+<p>The outside view is not a magic penalty that should be pasted onto every budget. It depends on the quality of the comparison.</p>
+<ul>
+<li><strong>Class selection is judgment.</strong> A class that is too broad mixes unlike projects. A class that is too narrow may contain too few observations. Either can produce a misleading benchmark.</li>
+<li><strong>History may not match today.</strong> New technology, regulation, financing conditions, labour markets or supply chains can change the distribution. Old data should not be treated as timeless.</li>
+<li><strong>Scope must be consistent.</strong> One project's final cost may include land, financing and owner costs while another's does not. Nominal and real costs, approved scope and final scope must be defined carefully.</li>
+<li><strong>Unique projects still exist.</strong> A genuinely novel undertaking may have no close reference class. That does not make it predictable; it makes the range of uncertainty wider and the case for staging, contingencies and independent review stronger.</li>
+</ul>
+<p>The inside view still matters. Detailed engineering, site surveys and contractor evidence can justify a project-specific adjustment. The discipline is to make that adjustment explicit and testable rather than letting every special feature become a reason to ignore the historical record.</p>
+
+<div class="label">07 / Put it to work</div><h2>Five questions before you believe the forecast.</h2>
+<ol class="questions">
+<li>What is the reference class of completed projects that is genuinely comparable in type, scale and complexity?</li>
+<li>What did those projects actually cost, how long did they take, and how quickly did they reach planned output?</li>
+<li>Where does management's estimate sit in that distribution: near the median, the optimistic tail or the adverse tail?</li>
+<li>What verifiable evidence places this project in a better part of the distribution than its peers?</li>
+<li>Does the investment still make sense under a less flattering cost, timing and ramp-up assumption?</li>
+</ol>
+<div class="pull">A forecast becomes more credible when it can explain why it deserves to differ from the evidence, not merely why its own plan looks convincing.</div>
+<p><strong>The practical takeaway:</strong> Before accepting a project budget, revenue ramp or delivery date, ask for the comparison set and the actual outcomes. Start with the distribution. Then let project-specific evidence earn its way into the forecast.</p>
+
+<section class="sources"><h2>Further reading</h2><p>Primary research and official histories behind this edition.</p><ol>
+<li>Bent Flyvbjerg (2006), “From Nobel Prize to Project Management: Getting Risks Right,” <em>Project Management Journal</em>, 37(3). <a href="https://doi.org/10.1177/875697280603700302" target="_blank" rel="noopener">Read the paper</a>.</li>
+<li>Bent Flyvbjerg, Mette K. Skamris Holm and Søren L. Buhl (2003), “How Common and How Large Are Cost Overruns in Transport Infrastructure Projects?”, <em>Transport Reviews</em>, 23(1), 71–88. <a href="https://doi.org/10.1080/01441640309904" target="_blank" rel="noopener">Read the study</a>.</li>
+<li>HM Treasury (2013), <em>Green Book supplementary guidance: optimism bias</em>. <a href="https://www.gov.uk/government/publications/green-book-supplementary-guidance-optimism-bias" target="_blank" rel="noopener">Official guidance</a>.</li>
+<li>Sydney Opera House, <em>Construction begins</em>, project history. <a href="https://www.sydneyoperahouse.com/our-story/construction-begins" target="_blank" rel="noopener">Read the history</a>.</li>
+<li>Museums of History NSW, <em>Sydney Opera House guide</em>, archival chronology and cost note. <a href="https://mhnsw.au/guides/sydney-opera-house/" target="_blank" rel="noopener">View the guide</a>.</li>
+</ol></section>
+</main>
+<footer><span>Daily Big Idea · Edition 028</span><span>Read carefully. Think differently.</span></footer>
+</div></body></html>
