@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily Big Idea, Edition 029: Baumol's cost disease and why services can become more expensive even when nobody is getting less efficient.">
+<meta name="theme-color" content="#f1eadb">
+<title>Edition 029 - Baumol's Cost Disease | Daily Big Idea</title>
+<style>
+:root{--paper:#f1eadb;--sheet:#faf7ef;--ink:#202c3a;--muted:#626b70;--red:#c44d35;--blue:#315e83;--gold:#d49a37;--rule:rgba(32,44,58,.2);--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;--mono:Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}a{color:#a23a28;text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 42px));margin:auto}
+.topbar{display:flex;justify-content:space-between;gap:15px;padding:21px 0;border-bottom:1px solid var(--rule);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.topbar a{color:var(--ink);text-decoration:none}.issue{color:var(--muted)}
+header{padding:clamp(54px,9vw,98px) 0 44px}.header-grid{display:grid;grid-template-columns:1fr 130px;gap:25px;align-items:end}.kicker,.label{font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}.kicker:before{content:"";display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{margin:21px 0 18px;font:400 clamp(3.1rem,8.5vw,6.3rem)/.91 var(--serif);letter-spacing:-.065em}.dek{max-width:650px;margin:0;color:#465565;font:400 clamp(1.2rem,2.6vw,1.55rem)/1.48 var(--serif)}.header-stamp{width:118px;height:118px;border:1px solid var(--red);border-radius:50%;display:grid;place-items:center;transform:rotate(9deg);color:var(--red);font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-align:center}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.thesis{margin:10px 0 58px;padding:22px 24px;background:var(--ink);color:var(--sheet);border-left:6px solid var(--red);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}.thesis strong{display:block;color:#f0bd70;font:700 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.thesis p{margin:0;font:400 1.2rem/1.4 var(--serif)}.thesis .stamp{color:#bfc9ce;font:700 9px var(--mono);letter-spacing:.12em;text-align:right}
+main{padding-bottom:68px}.label{margin:47px 0 10px;color:var(--blue)}h2{margin:0 0 17px;font:400 clamp(2rem,5vw,3rem)/1.06 var(--serif);letter-spacing:-.045em}h3{margin:24px 0 7px;font-size:1.04rem}p{margin:0 0 17px}.lead:first-letter{float:left;padding:8px 9px 0 0;color:var(--red);font:400 4.2rem/.76 var(--serif)}.pull{margin:34px 0;padding:9px 0 9px 24px;border-left:2px solid var(--gold);color:#31516a;font:italic 1.55rem/1.4 var(--serif)}
+.diagram{margin:34px 0 40px;padding:22px;background:var(--sheet);border:1px solid var(--rule)}.diagram-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stage{padding:15px 13px;background:#f4efe3;border:1px solid var(--rule)}.stage b{display:block;color:var(--red);font:700 10px var(--mono);margin-bottom:8px}.stage strong{display:block;font:400 1.08rem/1.2 var(--serif);margin-bottom:8px}.stage span{display:block;color:#4f5b64;font-size:.78rem;line-height:1.5}.diagram-note{margin:15px 0 0;color:var(--muted);font-size:.78rem}
+.example{margin:26px 0;padding:23px 25px;background:#e5e9e7;border-top:3px solid var(--blue)}.tag{color:var(--blue);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.formula{margin:14px 0;padding:13px 15px;background:#fbfaf5;border:1px solid #c7d0cc;font:700 clamp(.92rem,2.5vw,1.1rem) var(--mono);overflow-wrap:anywhere}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:23px}.mini{padding-top:12px;border-top:1px solid var(--rule)}.mini h3{margin-top:0;color:var(--blue)}.questions{counter-reset:q;list-style:none;padding:0;margin:20px 0 38px}.questions li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--rule)}.questions li:before{content:"0" counter(q);color:var(--red);font:700 12px var(--mono);padding-top:4px}
+.sources{margin-top:45px;padding:25px;background:var(--ink);color:var(--sheet)}.sources h2{font-size:2rem}.sources p{color:#cbd1d1;font-size:.9rem}.sources ol{padding-left:20px;margin:0}.sources li{padding:7px 0;font-size:.87rem}.sources a{color:#f0bd70}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 34px;border-top:1px solid var(--rule);color:var(--muted);font:700 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:850px){.timeline{grid-template-columns:1fr}}@media(max-width:650px){body{font-size:15px}.wrap{width:calc(100% - 30px)}.header-grid{grid-template-columns:1fr}.header-stamp{width:75px;height:75px;font-size:8px}.thesis{grid-template-columns:1fr}.thesis .stamp{text-align:left}.two-col{grid-template-columns:1fr}.diagram{padding:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white;color:#111;font-size:11pt}.wrap{width:100%}.diagram,.example,.sources{break-inside:avoid}.sources{background:#eee;color:#111}.sources p{color:#333}}
+</style>
+</head>
+<body><div class="wrap">
+<nav class="topbar"><a href="../index.html">← Daily Big Idea / Archive</a><span class="issue">No. 029 / 27 Nov 2026</span></nav>
+<header><div class="header-grid"><div><div class="kicker">Economics · Productivity · Investing</div><h1>The Cost of<br>Standing Still.</h1><p class="dek">Why a live performance, a classroom or a hospital visit can become more expensive even when the people doing the work have not become any less efficient.</p></div><div class="header-stamp">FIELD<br>NOTES<br>NO. 029</div></div><div class="meta"><span>Edition 029</span><span>27 November 2026</span><span>Reading time · 7 minutes</span></div></header>
+<aside class="thesis"><div><strong>The idea in one sentence</strong><p>When wages rise across an economy but some services cannot raise output per worker at the same pace, the cost of providing those services rises relative to more productive goods.</p></div><div class="stamp">SAME HUMAN<br>TIME.<br>HIGHER<br>OPPORTUNITY COST.</div></aside>
+<main>
+<div class="label">01 / The opening scene</div><h2>Four musicians. One stubborn piece.</h2>
+<p class="lead">Imagine a string quartet preparing to play a Beethoven piece. Four musicians are required. The piece lasts as long as it lasts. A violinist cannot play two parts at once, and a cellist cannot be replaced by a faster cellist without changing the performance. The group can rehearse better, tune more quickly and organise its work more efficiently. But it cannot turn one live quartet into ten simultaneous quartets simply by buying a clever machine.</p>
+<p>Now move across town to a factory. A better production line, a new machine or improved software can help the same workers produce far more goods in an hour. That extra output gives the business room to pay higher wages without raising the labour cost of each item. As the productive part of the economy grows richer, the musicians still live in that same economy. They need to pay rent, buy food and compete for skilled workers just like everyone else.</p>
+<p>To keep musicians, theatres and orchestras from losing people to better-paying employers, their wages also have to rise. Yet the number of musicians needed for the performance has barely changed. The cost of staging the same concert therefore climbs relative to the cost of a manufactured good.</p>
+<div class="pull">The quartet has not become worse at playing. The rest of the economy has become better at making almost everything else.</div>
+<p>Economist William J. Baumol, working with William G. Bowen, used the performing arts to explain this pressure in their 1966 study <em>Performing Arts: The Economic Dilemma</em>. Baumol developed the broader idea in his 1967 paper on unbalanced economic growth. It became known as <strong>Baumol's cost disease</strong>.</p>
+
+<div class="label">02 / The mechanism</div><h2>Two sectors. Two speeds of productivity.</h2>
+<p>The model divides the economy into two broad groups. A <strong>progressive sector</strong> finds ways to produce more per worker through machinery, software, better processes and economies of scale. A <strong>stagnant or slow-productivity sector</strong> relies on tasks where the amount of human time required is harder to reduce without changing the service itself.</p>
+<div class="diagram"><div class="diagram-head"><span>The cost-disease mechanism</span><span>Illustrative model</span></div><div class="timeline">
+<div class="stage"><b>01 / PRODUCTIVITY</b><strong>One sector accelerates</strong><span>A factory produces more units per worker-hour. Higher output supports higher wages.</span></div>
+<div class="stage"><b>02 / LABOUR MARKET</b><strong>Wages travel</strong><span>Workers can move between employers. Slower-productivity sectors must compete to retain skilled people.</span></div>
+<div class="stage"><b>03 / UNIT COST</b><strong>Service costs rise</strong><span>Pay rises faster than output per worker. Labour cost per service therefore increases.</span></div>
+</div><p class="diagram-note">The model is about different rates of productivity growth, not a claim that every service is inefficient or that wages must move identically in every year.</p></div>
+<p>The key measure is <strong>unit labour cost</strong>: the wage paid for an hour of work divided by the real output produced in that hour. If wages grow at the same pace as productivity, labour cost per unit stays roughly stable. If wages rise faster than productivity, unit labour cost increases.</p>
+<div class="example"><div class="tag">A simple numerical illustration</div>
+<div class="formula">Progressive sector: wages +4% · productivity +4% → unit labour cost roughly unchanged</div>
+<div class="formula">Slow-productivity service: wages +4% · productivity +1% → unit labour cost about 3% higher</div>
+<p>For the second sector, the exact change is 1.04 ÷ 1.01 − 1, or approximately 2.97%. The numbers are illustrative, not a forecast for any particular industry.</p></div>
+<p>Why do service wages rise at all? Because workers have alternatives. If a skilled nurse, teacher, musician or technician can earn substantially more elsewhere, the employer must improve pay or accept vacancies and turnover. Labour-market competition transmits some of the gains from the productive sector, even when the service provider has not found an equivalent productivity breakthrough.</p>
+
+<div class="label">03 / Where it appears</div><h2>The effect hides in ordinary life.</h2>
+<div class="two-col">
+<div class="mini"><h3>Live performance</h3><p>A quartet still needs four players for the same piece. Recording and streaming can distribute a performance to millions at low marginal cost, but they do not replace the distinct product of being in the room for a live concert.</p></div>
+<div class="mini"><h3>Education</h3><p>Software can help with marking, preparation and administration. But if a school wants more individual attention from a qualified teacher, it may still need more teacher-hours. Simply doubling class size changes the service.</p></div>
+<div class="mini"><h3>Healthcare</h3><p>Diagnostics, equipment and digital records can make care more effective. Yet some tasks still require trained people spending time with patients. More complex cases can also make simple output-per-visit comparisons misleading.</p></div>
+<div class="mini"><h3>Personal services</h3><p>A haircut, a legal consultation or hands-on care remains tied to skilled human time in many cases. A faster booking system helps the business, but it does not automatically shorten the work required to deliver quality.</p></div>
+</div>
+<p>These are not industries with no innovation. The point is narrower: productivity gains can be uneven across the tasks that make up a service. A clinic may automate billing and scheduling while the consultation itself still requires a clinician's attention. A theatre can sell tickets online while the performance still needs its cast and crew.</p>
+
+<div class="label">04 / Why investors should care</div><h2>Revenue can grow while productivity stands still.</h2>
+<p>In a slow-productivity business, rising prices may be necessary just to keep up with wages. That can create nominal revenue growth without a matching increase in real output. The company's economics depend on what happens next: can it pass higher costs to customers, redesign work, use technology to free up skilled time, or spread fixed costs across more activity?</p>
+<div class="example"><div class="tag">An illustrative clinic comparison</div>
+<p>Consider two clinics that both want to preserve consultation quality. Clinic A adds digital intake, automated reminders and better scheduling. Clinicians still spend the time needed with each patient, but less of their day is lost to avoidable administration. Clinic B keeps the same workflow and absorbs rising wages.</p>
+<div class="two-col">
+<div class="mini"><h3>Clinic A</h3><p>Technology complements skilled labour, freeing more clinician time for patient care and potentially lifting visits per paid hour without cutting consultation time.</p></div>
+<div class="mini"><h3>Clinic B</h3><p>With little workflow improvement, wage inflation flows more directly into unit costs. The clinic must raise prices, accept lower margins or reduce capacity elsewhere.</p></div>
+</div><p class="diagram-note">Illustrative mechanism, not a comparison of actual providers. More visits are only a productivity gain if case mix, outcomes and quality are maintained.</p></div>
+<p>For equity research, the questions are practical:</p>
+<ul>
+<li><strong>Pricing power:</strong> Can the provider pass higher labour costs through to customers, insurers, patients or public budgets? A high nominal price increase is not useful if volumes collapse.</li>
+<li><strong>Labour productivity:</strong> Is revenue or quality-adjusted output per employee-hour improving, or is reported growth mostly price inflation?</li>
+<li><strong>Operating design:</strong> Does technology remove low-value tasks, improve scheduling and reduce idle time, or is it merely another cost line?</li>
+<li><strong>Scale:</strong> Can the business spread administration, facilities and technology across more customers without damaging the service?</li>
+<li><strong>Funding model:</strong> In public or not-for-profit services, pressure may surface as larger budgets, subsidies, deficits, waiting lists or staffing shortages rather than a market price increase.</li>
+</ul>
+<p>William Nordhaus tested the broader pattern using US industry data from 1948 to 2001. His 2006 study found that industries with weak productivity growth tended to experience rising relative prices and declining relative real output. The pattern is not a forecast for each company, but it gives investors a reason to examine productivity and labour intensity rather than treating service inflation as a temporary surprise.</p>
+
+<div class="label">05 / The limits</div><h2>Not every expensive service has a disease.</h2>
+<p>The name sounds like a diagnosis. The idea is a mechanism, not a verdict on management quality. Several caveats matter before using it in an investment model.</p>
+<ul>
+<li><strong>Measurement is difficult.</strong> A teacher may produce better learning outcomes, or a hospital may treat more complicated cases, without a simple increase in the number of students taught or patients seen per hour. If quality is missed, productivity can be understated.</li>
+<li><strong>Some services scale extremely well.</strong> Software, telecommunications, digital distribution and parts of finance can serve far more customers without proportional increases in labour. The label “services” is too broad to be useful on its own.</li>
+<li><strong>Technology can change the task.</strong> Automation may not replace the whole service, but it can remove administration, improve diagnosis or let professionals focus on higher-value work. Productivity can accelerate when the task mix changes.</li>
+<li><strong>Prices depend on more than wages.</strong> Demand, regulation, market power, trade exposure and the availability of substitutes also affect prices. Higher service inflation is not proof of Baumol's mechanism.</li>
+</ul>
+<p>The empirical record is therefore not a one-line answer. Nordhaus found a strong long-run relationship across US industries. A Statistics Canada study examining service inflation in Canada argued that Baumol's explanation was insufficient on its own and considered measurement problems, demand and international competition as other causes. Both findings are useful: the mechanism can be real without explaining every price increase.</p>
+<p>There is also a social question. If a service is valuable precisely because it requires human attention, trying to make it look like a factory can damage what people are paying for. The goal is not to eliminate human time at any cost. It is to use that time well and decide transparently who will fund the rising cost.</p>
+
+<div class="label">06 / Put it to work</div><h2>Five questions for a service business.</h2>
+<ol class="questions">
+<li>Which tasks genuinely require skilled human time, and which are administrative friction that technology could remove?</li>
+<li>How have wages changed relative to quality-adjusted output per employee-hour?</li>
+<li>Can the company pass higher unit costs to customers without losing too much volume?</li>
+<li>Are wait times, staffing ratios, case mix or service quality changing as management tries to protect margins?</li>
+<li>Does the business have a credible productivity plan, or does the forecast assume that price increases will do all the work?</li>
+</ol>
+<div class="pull">A rising cost per service is not automatically evidence of waste. Sometimes it is the price of using skilled human time in an economy where that time has become more valuable.</div>
+<p><strong>The practical takeaway:</strong> When analysing a labour-intensive business, separate wage growth from productivity growth. Then ask where the difference will land: prices, margins, capacity, public funding or quality. The answer tells you much more than the headline growth rate.</p>
+
+<section class="sources"><h2>Further reading</h2><p>Foundational work, later empirical research and a useful counterweight.</p><ol>
+<li>William J. Baumol and William G. Bowen (1966), <em>Performing Arts: The Economic Dilemma</em>, a study of theatre, opera, music and dance. <a href="https://discover.library.unt.edu/catalog/b1196859" target="_blank" rel="noopener">Library catalogue record</a>.</li>
+<li>William J. Baumol (1967), “Macroeconomics of Unbalanced Growth: The Anatomy of Urban Crisis,” <em>American Economic Review</em>, 57(3), 415–426. <a href="https://www.jstor.org/stable/1812111" target="_blank" rel="noopener">Read the paper record</a>.</li>
+<li>William D. Nordhaus (2006), “Baumol's Diseases: A Macroeconomic Perspective,” NBER Working Paper 12218. <a href="https://www.nber.org/papers/w12218" target="_blank" rel="noopener">Read the study</a>.</li>
+<li>Klaus Kostenbauer and Marc Prud'homme (1997), “Service Inflation: Why Is It Higher? A Partial Examination of the Causes,” Statistics Canada. <a href="https://www150.statcan.gc.ca/n1/pub/61-532-x/1997001/article/3505-eng.html" target="_blank" rel="noopener">Read the analysis</a>.</li>
+<li>Tyler Cowen and Robin Grier (1996), “Do Artists Suffer from a Cost-Disease?”, an examination of qualifications to the original performing-arts argument. <a href="https://doi.org/10.1177/104346396008001001" target="_blank" rel="noopener">Read the abstract</a>.</li>
+</ol></section>
+</main>
+<footer><span>Daily Big Idea · Edition 029</span><span>Read carefully. Think differently.</span></footer>
+</div></body></html>
