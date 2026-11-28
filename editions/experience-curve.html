@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daily Big Idea, Edition 030: The experience curve and how cumulative production can lower unit costs through learning, process redesign and scale.">
+<meta name="theme-color" content="#f1eadb">
+<title>Edition 030 - The Experience Curve | Daily Big Idea</title>
+<style>
+:root{--paper:#f1eadb;--sheet:#faf7ef;--ink:#202c3a;--muted:#626b70;--red:#c44d35;--blue:#315e83;--gold:#d49a37;--rule:rgba(32,44,58,.2);--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;--mono:Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}a{color:#a23a28;text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 42px));margin:auto}
+.topbar{display:flex;justify-content:space-between;gap:15px;padding:21px 0;border-bottom:1px solid var(--rule);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.topbar a{color:var(--ink);text-decoration:none}.issue{color:var(--muted)}
+header{padding:clamp(54px,9vw,98px) 0 44px}.header-grid{display:grid;grid-template-columns:1fr 130px;gap:25px;align-items:end}.kicker,.label{font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}.kicker:before{content:"";display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{margin:21px 0 18px;font:400 clamp(3.1rem,8.5vw,6.3rem)/.91 var(--serif);letter-spacing:-.065em}.dek{max-width:650px;margin:0;color:#465565;font:400 clamp(1.2rem,2.6vw,1.55rem)/1.48 var(--serif)}.header-stamp{width:118px;height:118px;border:1px solid var(--red);border-radius:50%;display:grid;place-items:center;transform:rotate(9deg);color:var(--red);font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-align:center}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.thesis{margin:10px 0 58px;padding:22px 24px;background:var(--ink);color:var(--sheet);border-left:6px solid var(--red);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}.thesis strong{display:block;color:#f0bd70;font:700 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.thesis p{margin:0;font:400 1.2rem/1.4 var(--serif)}.thesis .stamp{color:#bfc9ce;font:700 9px var(--mono);letter-spacing:.12em;text-align:right}
+main{padding-bottom:68px}.label{margin:47px 0 10px;color:var(--blue)}h2{margin:0 0 17px;font:400 clamp(2rem,5vw,3rem)/1.06 var(--serif);letter-spacing:-.045em}h3{margin:24px 0 7px;font-size:1.04rem}p{margin:0 0 17px}.lead:first-letter{float:left;padding:8px 9px 0 0;color:var(--red);font:400 4.2rem/.76 var(--serif)}.pull{margin:34px 0;padding:9px 0 9px 24px;border-left:2px solid var(--gold);color:#31516a;font:italic 1.55rem/1.4 var(--serif)}
+.diagram{margin:34px 0 40px;padding:22px;background:var(--sheet);border:1px solid var(--rule)}.diagram-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font:700 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.stage{padding:15px 13px;background:#f4efe3;border:1px solid var(--rule)}.stage b{display:block;color:var(--red);font:700 10px var(--mono);margin-bottom:8px}.stage strong{display:block;font:400 1.08rem/1.2 var(--serif);margin-bottom:8px}.stage span{display:block;color:#4f5b64;font-size:.78rem;line-height:1.5}.diagram-note{margin:15px 0 0;color:var(--muted);font-size:.78rem}
+.example{margin:26px 0;padding:23px 25px;background:#e5e9e7;border-top:3px solid var(--blue)}.tag{color:var(--blue);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.formula{margin:14px 0;padding:13px 15px;background:#fbfaf5;border:1px solid #c7d0cc;font:700 clamp(.92rem,2.5vw,1.1rem) var(--mono);overflow-wrap:anywhere}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:23px}.mini{padding-top:12px;border-top:1px solid var(--rule)}.mini h3{margin-top:0;color:var(--blue)}.questions{counter-reset:q;list-style:none;padding:0;margin:20px 0 38px}.questions li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--rule)}.questions li:before{content:"0" counter(q);color:var(--red);font:700 12px var(--mono);padding-top:4px}
+.sources{margin-top:45px;padding:25px;background:var(--ink);color:var(--sheet)}.sources h2{font-size:2rem}.sources p{color:#cbd1d1;font-size:.9rem}.sources ol{padding-left:20px;margin:0}.sources li{padding:7px 0;font-size:.87rem}.sources a{color:#f0bd70}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 34px;border-top:1px solid var(--rule);color:var(--muted);font:700 9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:850px){.timeline{grid-template-columns:1fr 1fr}}@media(max-width:650px){body{font-size:15px}.wrap{width:calc(100% - 30px)}.header-grid{grid-template-columns:1fr}.header-stamp{width:75px;height:75px;font-size:8px}.thesis{grid-template-columns:1fr}.thesis .stamp{text-align:left}.two-col{grid-template-columns:1fr}.diagram{padding:15px}.timeline{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white;color:#111;font-size:11pt}.wrap{width:100%}.diagram,.example,.sources{break-inside:avoid}.sources{background:#eee;color:#111}.sources p{color:#333}}
+</style>
+</head>
+<body><div class="wrap">
+<nav class="topbar"><a href="../index.html">← Daily Big Idea / Archive</a><span class="issue">No. 030 / 28 Nov 2026</span></nav>
+<header><div class="header-grid"><div><div class="kicker">Business · Strategy · Manufacturing · Investing</div><h1>The Cost of<br>Getting Better.</h1><p class="dek">A factory's thousandth unit can be cheaper than its first. The reason may not be cheaper materials or lower wages. It may be the knowledge accumulated by making the product again and again.</p></div><div class="header-stamp">FIELD<br>NOTES<br>NO. 030</div></div><div class="meta"><span>Edition 030</span><span>28 November 2026</span><span>Reading time · 7 minutes</span></div></header>
+<aside class="thesis"><div><strong>The idea in one sentence</strong><p>As cumulative production grows, companies can learn to make the same product with fewer hours, less waste, better yields and lower real unit costs. Repetition can become a competitive advantage.</p></div><div class="stamp">MORE<br>REPETITIONS.<br>LESS COST<br>PER UNIT.</div></aside>
+<main>
+<div class="label">01 / The opening scene</div><h2>The first aircraft is an expensive teacher.</h2>
+<p class="lead">In the 1930s, an engineer at Curtiss-Wright began asking a deceptively simple question: why did the cost of building an aircraft change as the factory built more of them? The first airframe was not just a product. It was also a lesson. Workers learned the sequence. Engineers found awkward joints and redesigned them. Jigs became more reliable. The next aircraft could be built with a little less wasted motion and a little less rework.</p>
+<p>The engineer was Theodore Paul Wright. In a 1936 paper, <em>Factors Affecting the Cost of Airplanes</em>, he documented how labour requirements changed with cumulative production. The important variable was not simply how many years the factory had been open. It was how many units the production system had already learned to make.</p>
+<p>That distinction matters. A factory can spend five years making the same number of products as a rival that has spent one year making ten times as many. Calendar time alone does not tell you which factory has accumulated more production experience.</p>
+<div class="pull">The first unit teaches the factory how to make the product. The next units teach it how to make the product better.</div>
+<p>In the 1960s, the Boston Consulting Group widened the idea beyond direct labour time. Its analysis of a semiconductor manufacturer's costs helped popularise the <strong>experience curve</strong>: the observation that real unit production costs can fall as cumulative output rises. BCG described cost reductions of roughly 20–30% per doubling of accumulated production in some settings. That range is a historical strategic rule of thumb, not a universal law.</p>
+
+<div class="label">02 / The mechanism</div><h2>Experience is not just repetition. It is feedback.</h2>
+<p>Producing more units does not automatically make a factory smarter. The benefit appears when repeated production gives the organisation information and incentives to improve the process. Several mechanisms can operate at once.</p>
+<div class="diagram"><div class="diagram-head"><span>How experience can lower unit cost</span><span>Four reinforcing channels</span></div><div class="timeline">
+<div class="stage"><b>01 / LEARN</b><strong>People get better</strong><span>Teams discover the right sequence, reduce setup time and make fewer repeat mistakes.</span></div>
+<div class="stage"><b>02 / REDESIGN</b><strong>The process improves</strong><span>Tooling, layouts, fixtures, automation and product design remove bottlenecks and rework.</span></div>
+<div class="stage"><b>03 / STANDARDISE</b><strong>Suppliers improve</strong><span>Higher, steadier demand supports better specifications, component consistency and supplier investment.</span></div>
+<div class="stage"><b>04 / SPREAD</b><strong>Fixed costs travel further</strong><span>Engineering, software, facilities and overheads can be spread across more units.</span></div>
+</div><p class="diagram-note">The first three channels are forms of learning and process improvement. The fourth is an economy of scale. A broad experience curve can capture several of them together, so analysts should separate the drivers where possible.</p></div>
+<p>The narrower <strong>learning curve</strong> often measures how labour hours per unit fall as workers repeat a task. The broader <strong>experience curve</strong> looks at total real unit cost, which may also reflect better yields, process engineering, procurement, automation and overhead absorption. The two are related, but they are not identical.</p>
+<div class="example"><div class="tag">A simple numerical illustration</div>
+<p>Suppose a factory has a real unit cost of $100. Assume, purely for illustration, that its cost falls by 20% every time cumulative production doubles. The progress ratio is 80%.</p>
+<div class="formula">Starting cost: $100</div>
+<div class="formula">After 1 doubling: $100 × 0.80 = $80</div>
+<div class="formula">After 2 doublings: $80 × 0.80 = $64</div>
+<div class="formula">After 3 doublings: $64 × 0.80 = $51.20</div>
+<p>After cumulative output rises eightfold, the modelled unit cost is almost half the starting level. The reduction is not 20% every year. It is 20% for each doubling of accumulated output. If production doubles slowly, the calendar-time benefit arrives slowly too.</p></div>
+<p>Lower costs can then reinforce demand. A producer may lower prices and make the product affordable to new customers. More customers support more production. More production creates more opportunities to improve the process. That is the positive feedback loop at the heart of the experience curve.</p>
+
+<div class="label">03 / Where it appears</div><h2>Solar panels and batteries learned at scale.</h2>
+<div class="two-col">
+<div class="mini"><h3>Solar photovoltaics</h3><p>Our World in Data describes solar as a striking example of Wright's Law. Over roughly four decades, the price of solar panels fell from about $106 per watt to around $0.38 per watt. The price declined by about 20% with each doubling of cumulative installed capacity.</p><p>As deployment expanded, manufacturers gained experience, production processes improved and the supply chain matured. Lower prices then made solar attractive in more markets and applications.</p></div>
+<div class="mini"><h3>Lithium-ion batteries</h3><p>A study published in <em>Energy Policy</em> in October 2026 estimates a 21% learning rate for lithium-ion batteries using a price decline from roughly $10,000 per kWh in 1991 to $78 per kWh in 2024, alongside a rise in cumulative installed storage capacity from 0.14 MWh to 3.1 TWh.</p><p>The authors also caution that future progress depends on continued market growth, supply-chain stability and policy support. A learning curve is powerful, but it does not run itself.</p></div>
+</div>
+<p>These are technology-wide examples, not proof that every manufacturer earned attractive returns. Solar prices and battery prices reflect many forces at once: production experience, research and development, material prices, product performance, competition, policy and manufacturing scale. The curve describes a pattern. It does not identify who captured the value.</p>
+
+<div class="label">04 / Why investors should care</div><h2>Scale can be a moat, or an expensive obsession.</h2>
+<p>Imagine two manufacturers selling the same standardised component. One has made four times as many units as the other. If both sit on the same hypothetical 80% progress curve and began with comparable processes, the higher-volume producer has accumulated two additional doublings. That could create a meaningful cost advantage.</p>
+<p>The advantage can be used in several ways. The leader can reduce prices and make life harder for rivals, keep prices steady and earn wider margins, or reinvest the savings in process technology and the next product generation. The best choice depends on the market and on how easily competitors can copy the improvements.</p>
+<div class="example"><div class="tag">The investor's distinction</div>
+<div class="two-col">
+<div class="mini"><h3>Good scale</h3><p>Each production run improves yield, lowers scrap, shortens cycle time or increases output from the same equipment. The company can show a repeatable fall in real cost per quality-adjusted unit.</p></div>
+<div class="mini"><h3>Expensive scale</h3><p>The company adds factories, discounts products and reports rapid volume growth, but utilisation remains weak, inventory rises and unit economics do not improve. Market share is being purchased rather than earned through learning.</p></div>
+</div><p class="diagram-note">Volume is an input to learning, not evidence that learning has happened.</p></div>
+<p>For an investor, the useful questions are operational:</p>
+<ul>
+<li><strong>Track cumulative output.</strong> Is management measuring progress against units produced, batches completed or another meaningful measure of experience, rather than relying only on year-on-year growth?</li>
+<li><strong>Separate the cost drivers.</strong> How much of the cost reduction comes from raw materials, labour hours, yield, scrap, energy, freight, automation and fixed-cost absorption?</li>
+<li><strong>Check quality.</strong> Is cost per unit falling because the process improved, or because specifications, warranties, safety or product life were quietly compromised?</li>
+<li><strong>Identify who captures the savings.</strong> Do lower costs support better margins, lower prices that expand the market, royalties for the technology owner, or bargaining power for customers?</li>
+<li><strong>Test the capital bill.</strong> How much cash must be invested to earn the next doubling of experience? A cost curve is less attractive when every step requires excess capacity and expensive financing.</li>
+</ul>
+<p>The distinction between learning and value capture is crucial. A supplier may become more efficient while a powerful customer negotiates away every saving. An industry may improve rapidly while competition pushes selling prices down just as quickly. Lower cost is not the same thing as higher shareholder returns.</p>
+
+<div class="label">05 / The limits</div><h2>The curve can bend, flatten or belong to someone else.</h2>
+<ul>
+<li><strong>It is not a constant of nature.</strong> Learning rates differ by product, firm, period and definition of output. Early improvements can be dramatic; later gains may become harder and more expensive.</li>
+<li><strong>Price is not production cost.</strong> A fall in selling prices may reflect cheaper commodities, exchange rates, subsidies, competition or overcapacity. It should not automatically be credited to factory learning.</li>
+<li><strong>Scale and learning are different.</strong> Running a plant at higher utilisation spreads fixed costs. Learning improves how the work is done. Both may lower average cost, but they have different limits and investment requirements.</li>
+<li><strong>Experience can leak.</strong> Suppliers, engineers, competitors and contract manufacturers can share process knowledge. The industry may get better even if one company cannot keep the advantage.</li>
+<li><strong>New generations can reset the race.</strong> A firm may become brilliant at making an old design cheaply and still lose when customers switch to a new chemistry, architecture or product. BCG argues that companies need experience not only in fulfilling existing demand but also in shaping new demand.</li>
+</ul>
+<p>Battery research makes the measurement issue especially clear. A 2021 analysis by Micah Ziegler and Jessika Trancik found that the estimated learning rate changed when performance was measured using energy density as well as cost per unit of energy capacity. A battery that stores more energy in the same space is delivering a different, more valuable service. The denominator matters.</p>
+<p>That is why a smooth historical curve should not be copied blindly into a forecast. A new factory, product generation, supply shock or change in market definition can bend the relationship. The right question is not simply whether costs fell in the past. It is which mechanisms caused the fall and whether they can keep working.</p>
+
+<div class="label">06 / Put it to work</div><h2>Five questions before you underwrite the curve.</h2>
+<ol class="questions">
+<li>What is the correct measure of cumulative experience: units, batches, installed capacity, machine-hours or quality-adjusted output?</li>
+<li>What has actually improved with each doubling: labour time, yield, scrap, energy use, supplier cost, cycle time or fixed-cost absorption?</li>
+<li>Does the company have a cost advantage over competitors, or is the entire industry moving down the same curve?</li>
+<li>Can the company retain some of the savings through margins, intellectual property, switching costs or a stronger customer proposition?</li>
+<li>What could reset the curve: a new technology, a product redesign, input-price reversal, capacity glut or an inability to finance further scale?</li>
+</ol>
+<div class="pull">The question is not how big a company has become. It is what the company has learned because it became bigger.</div>
+<p><strong>The practical takeaway:</strong> When management promises that margins will improve with scale, ask for the experience curve. Track real cost per cumulative doubling, separate the effects of materials, yields and utilisation, and identify who captures the savings. A volume target is a plan. A repeatable cost improvement is evidence.</p>
+
+<section class="sources"><h2>Further reading</h2><p>Original research, strategy history and recent evidence from energy technologies.</p><ol>
+<li>T. P. Wright (1936), “Factors Affecting the Cost of Airplanes,” <em>Journal of the Aeronautical Sciences</em>, 3(4), 122–128. <a href="https://doi.org/10.2514/8.155" target="_blank" rel="noopener">Original paper record</a>.</li>
+<li>Martin Reeves, George Stalk and Filippo Scognamiglio (2013), “BCG Classics Revisited: The Experience Curve.” <a href="https://www.bcg.com/publications/2013/growth-business-unit-strategy-experience-curve-bcg-classics-revisited" target="_blank" rel="noopener">Read the BCG analysis</a>.</li>
+<li>Max Roser (18 April 2023), “Learning curves: What does it mean for a technology to follow Wright's Law?”, <em>Our World in Data</em>. <a href="https://ourworldindata.org/learning-curve" target="_blank" rel="noopener">Read the explanation and solar data</a>.</li>
+<li>Micah S. Ziegler and Jessika E. Trancik (2021), “Re-examining rates of lithium-ion battery technology improvement and cost decline,” <em>Energy &amp; Environmental Science</em>, 14, 1635–1651. <a href="https://doi.org/10.1039/D0EE02681F" target="_blank" rel="noopener">Read the open-access study</a>.</li>
+<li>Tom Kroon, Moniek Tromp and Bob van der Zwaan (October 2026), “An overview of prices and learning rates for Li-ion batteries,” <em>Energy Policy</em>, 217, 115416. <a href="https://doi.org/10.1016/j.enpol.2026.115416" target="_blank" rel="noopener">Read the article record</a>.</li>
+</ol></section>
+</main>
+<footer><span>Daily Big Idea · Edition 030</span><span>Read carefully. Think differently.</span></footer>
+</div></body></html>
